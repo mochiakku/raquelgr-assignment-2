@@ -148,12 +148,13 @@ const KMeansClustering = () => {
           if (hasConverged) {
             clearInterval(interval); // Stop animation
             setIsAnimating(false);
+            alert("KMeans clustering has finished running!");
           }
       
           // Update points and centroids for the next step
           currentPoints = updatedPoints;
           currentCentroids = updatedCentroids;
-        }, 1000); // Run every 1 second
+        }, 1000); 
       };
       
     const runKMeansFinal = () => {
