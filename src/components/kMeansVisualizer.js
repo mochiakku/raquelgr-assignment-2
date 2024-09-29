@@ -159,7 +159,9 @@ const KMeansClustering = () => {
       
     const runKMeansFinal = () => {
         let currentPoints = [...dataPoints];
-        let currentCentroids = initializeCentroids(); // Initialize centroids
+        let currentCentroids = initMethod === 'manual' && centroids.length > 0 
+          ? centroids 
+          : initializeCentroids(); // Use existing centroids if in manual mode
     
         let hasConverged = false;
         while (!hasConverged) {
